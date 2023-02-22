@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vms_inspector.css">
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.ui.widget.js"></script>
+    <script src="./js/jquery.jcrop.min.js"></script>
+    <!--<script src="./js/jquery.ui.accordion.js"></script>-->
+
+    <link rel="stylesheet" href="./css/jquery.ui.theme.css" type="text/css" />
+    <link rel="stylesheet" href="./css/jquery.ui.accordion.css" type="text/css" />
+    <link rel="stylesheet" href="./css/jquery.Jcrop.css" type="text/css" />
+    <link rel="stylesheet" href="./css/jcrop_main.css" type="text/css" />
+    <script src="vms_inspector.js"></script>
+    <!--<script src="./js/jcrop_main.js"></script>-->
+</head>
+</head>
+<body>
+
+<h1>Voynich Manuscript</h1>
+<table width="1200px" border="none">
+    <tr>
+        <td align="left">@prev@</td>
+        <td align="center"> <a href="@index_file@#@folio@" >TOC</a></td>
+         <td align="right">@next@</td>
+    </tr>
+</table>
+<!--@prev@&emsp;&emsp;&emsp;&emsp;-->
+<!--<a href="index.html#@folio@" >TOC</a>&emsp;&emsp;&emsp;&emsp;-->
+<!--@next@-->
+
+<h2>@folio@</h2>
+
+
+<!--<div class="img-magnifier-container">-->
+<!--  <img id="myimage" src="hires/@image_filename@"  width="600" height="400" alt="VMS">-->
+<!--</div>-->
+
+    <div id="message">message here</div>
+    <button id="capture">Capture</button>
+    <div id="myresult3" style="width:@image_lens_width@px;  height:@image_height@px;" class="img-zoom-result-a"></div>
+<!--    <img id="myresult3"  class="img-zoom-result-b" style="width:@image_wide_width@px;  height:64px;" />-->
+
+    <div style="margin:5px;">
+            <label>X1 <input type="text" name="x" id="x" size="4"/></label>
+            <label>Y1 <input type="text" name="y" id="y" size="4"/></label>
+            <label>X2 <input type="text" name="x2" id="x2" size="4"/></label>
+            <label>Y2 <input type="text" name="y2" id="y2" size="4"/></label>
+            <label>W <input type="text" name="w" id="w" size="4"/></label>
+            <label>H <input type="text" name="h" id="h" size="4"/></label>
+        </div>
+
+<div class="img-zoom-container img-magnifier-container">
+    <table>
+        <tr>
+<!--            <td ><img id="myimage1" src="hires/@image_filename@" style="width:@image_width@px; height:@image_height@px;" ></td>-->
+            <td ><img id="myimage1" src="hires/136.jpg" style="width:621px; height:810px;" ></td>
+<!--            <td><img id="myimage1" src="hires/@image_filename@" width="600" height="810"></td>-->
+            <td >
+                <div id="myresult1" style="width:@image_lens_width@px;  height:@image_height@px;" class="img-zoom-result-a"></div>
+            </td >
+<!--            <td row_span="2">@transliteration_table@-->
+<!--</td>-->
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td >
+                <img id="myresult2"  class="img-zoom-result-b" style="width:@image_wide_width@px;  height:64px;" />
+            </td>
+        </tr>
+    </table>
+</div>
+
+@transliteration_table@
+
+<script>
+// Initiate zoom effect:
+<!--setup();-->
+imageZoom("myimage1", "myresult1", "myresult2", "myresult3");
+
+/* Initiate Magnify Function
+with the id of the image, and the strength of the magnifier glass:*/
+<!--magnify("myimage1", 6);-->
+
+
+
+</script>
+
+</body>
+</html>

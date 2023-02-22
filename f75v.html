@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vms_inspector.css">
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.ui.widget.js"></script>
+    <script src="./js/jquery.jcrop.min.js"></script>
+    <!--<script src="./js/jquery.ui.accordion.js"></script>-->
+
+    <link rel="stylesheet" href="./css/jquery.ui.theme.css" type="text/css" />
+    <link rel="stylesheet" href="./css/jquery.ui.accordion.css" type="text/css" />
+    <link rel="stylesheet" href="./css/jquery.Jcrop.css" type="text/css" />
+    <link rel="stylesheet" href="./css/jcrop_main.css" type="text/css" />
+    <script src="vms_inspector.js"></script>
+    <!--<script src="./js/jcrop_main.js"></script>-->
+</head>
+</head>
+<body>
+
+<h1>Voynich Manuscript</h1>
+<table width="1200px" border="none">
+    <tr>
+        <td align="left">&emsp;&emsp;&emsp;&emsp;
+</td>
+        <td align="center"> <a href="index_text_analysis.html#f75v" >TOC</a></td>
+         <td align="right">&emsp;&emsp;&emsp;&emsp;
+</td>
+    </tr>
+</table>
+<!--&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;-->
+<!--<a href="index.html#f75v" >TOC</a>&emsp;&emsp;&emsp;&emsp;-->
+<!--&emsp;&emsp;&emsp;&emsp;
+-->
+
+<h2>f75v</h2>
+
+
+<!--<div class="img-magnifier-container">-->
+<!--  <img id="myimage" src="hires/136.jpg"  width="600" height="400" alt="VMS">-->
+<!--</div>-->
+
+    <div id="message">message here</div>
+    <button id="capture">Capture</button>
+    <div id="myresult3" style="width:600px;  height:810px;" class="img-zoom-result-a"></div>
+<!--    <img id="myresult3"  class="img-zoom-result-b" style="width:1221px;  height:64px;" />-->
+
+    <div style="margin:5px;">
+            <label>X1 <input type="text" name="x" id="x" size="4"/></label>
+            <label>Y1 <input type="text" name="y" id="y" size="4"/></label>
+            <label>X2 <input type="text" name="x2" id="x2" size="4"/></label>
+            <label>Y2 <input type="text" name="y2" id="y2" size="4"/></label>
+            <label>W <input type="text" name="w" id="w" size="4"/></label>
+            <label>H <input type="text" name="h" id="h" size="4"/></label>
+        </div>
+
+<div class="img-zoom-container img-magnifier-container">
+    <table>
+        <tr>
+<!--            <td ><img id="myimage1" src="hires/136.jpg" style="width:621px; height:810px;" ></td>-->
+            <td ><img id="myimage1" src="hires/136.jpg" style="width:621px; height:810px;" ></td>
+<!--            <td><img id="myimage1" src="hires/136.jpg" width="600" height="810"></td>-->
+            <td >
+                <div id="myresult1" style="width:600px;  height:810px;" class="img-zoom-result-a"></div>
+            </td >
+<!--            <td row_span="2"><stable><table width='2200px'>
+<tr><td rowspan=2>1</td><td rowspan=2>@P0</td><td align='left'><tvoy>g1c8ay&emsp;oj1c89&emsp;4ohc89&emsp;oj1c89&emsp;4oj89&emsp;8an&emsp;1ckas&emsp;1r9&emsp;4okap</tvoy></td></tr>
+<tr><td align='left'>g1c8ay&emsp;oj1c89&emsp;4ohc89&emsp;oj1c89&emsp;4oj89&emsp;8an&emsp;1ckas&emsp;1r9&emsp;4okap</td></tr>
+<tr><td rowspan=2>2</td><td rowspan=2>=L0</td><td align='right'><tvoy>s</tvoy></td></tr>
+<tr><td align='right'>s</td></tr>
+<tr><td rowspan=2>3</td><td rowspan=2>*P0</td><td align='left'><tvoy>soy&emsp;5ch9&emsp;4ohan&emsp;ohae&emsp;8ae&emsp;oe&emsp;1c89&emsp;8am&emsp;1H9&emsp;ehay&emsp;1H9&emsp;bop</tvoy></td></tr>
+<tr><td align='left'>soy&emsp;5ch9&emsp;4ohan&emsp;ohae&emsp;8ae&emsp;oe&emsp;1c89&emsp;8am&emsp;1H9&emsp;ehay&emsp;1H9&emsp;bop</td></tr>
+<tr><td rowspan=2>4</td><td rowspan=2>=L0</td><td align='right'><tvoy>e</tvoy></td></tr>
+<tr><td align='right'>e</td></tr>
+<tr><td rowspan=2>5</td><td rowspan=2>*P0</td><td align='left'><tvoy>8e&emsp;3H9&emsp;han&emsp;oe1c9&emsp;4ohan&emsp;8ae9&emsp;y8&emsp;8e&ensp;2c89&emsp;4okcc89&emsp;Kc89&emsp;eoe9</tvoy></td></tr>
+<tr><td align='left'>8e&emsp;3H9&emsp;han&emsp;oe1c9&emsp;4ohan&emsp;8ae9&emsp;y8&emsp;8e&ensp;2c89&emsp;4okcc89&emsp;Kc89&emsp;eoe9</td></tr>
+<tr><td rowspan=2>6</td><td rowspan=2>=L0</td><td align='right'><tvoy>e</tvoy></td></tr>
+<tr><td align='right'>e</td></tr>
+<tr><td rowspan=2>7</td><td rowspan=2>*P0</td><td align='left'><tvoy>4oh189&emsp;4ohae&emsp;7ae&emsp;oe&emsp;1ck9&emsp;e189&emsp;5c8(&emsp;1c8&emsp;okc89&emsp;4okc89&emsp;okay</tvoy></td></tr>
+<tr><td align='left'>4oh189&emsp;4ohae&emsp;7ae&emsp;oe&emsp;1ck9&emsp;e189&emsp;5c8(&emsp;1c8&emsp;okc89&emsp;4okc89&emsp;okay</td></tr>
+<tr><td rowspan=2>8</td><td rowspan=2>~L0</td><td align='left'><tvoy>o</tvoy></td></tr>
+<tr><td align='left'>o</td></tr>
+<tr><td rowspan=2>9</td><td rowspan=2>+L0</td><td align='left'><tvoy>y</tvoy></td></tr>
+<tr><td align='left'>y</td></tr>
+<tr><td rowspan=2>10</td><td rowspan=2>*P0</td><td align='left'><tvoy>4ohc&ensp;c8&emsp;1c89&ensp;h9&emsp;ohc79&emsp;e1c69&emsp;8ay&emsp;o&9&emsp;81c89&emsp;8ay&emsp;oe1o89&emsp;okc79&emsp;4oh(</tvoy></td></tr>
+<tr><td align='left'>4ohc&ensp;c8&emsp;1c89&ensp;h9&emsp;ohc79&emsp;e1c69&emsp;8ay&emsp;o&9&emsp;81c89&emsp;8ay&emsp;oe1o89&emsp;okc79&emsp;4oh(</td></tr>
+<tr><td rowspan=2>11</td><td rowspan=2>=L0</td><td align='right'><tvoy>s</tvoy></td></tr>
+<tr><td align='right'>s</td></tr>
+<tr><td rowspan=2>12</td><td rowspan=2>*P0</td><td align='left'><tvoy>4ohc8&ensp;9&emsp;b2c9&emsp;4oe&emsp;1c(&emsp;oe&emsp;1c9&emsp;hC8&emsp;soe&emsp;hc9&emsp;89&ensp;hc89&emsp;4ohAe&emsp;8ay&emsp;oe9</tvoy></td></tr>
+<tr><td align='left'>4ohc8&ensp;9&emsp;b2c9&emsp;4oe&emsp;1c(&emsp;oe&emsp;1c9&emsp;hC8&emsp;soe&emsp;hc9&emsp;89&ensp;hc89&emsp;4ohAe&emsp;8ay&emsp;oe9</td></tr>
+<tr><td rowspan=2>13</td><td rowspan=2>+P0</td><td align='left'><tvoy>o1can&emsp;1C8(&emsp;4ohae&emsp;8an&emsp;3cck9&emsp;4oh9&emsp;s&emsp;3c89&emsp;kc79&emsp;okc79&emsp;kc79&emsp;kayae</tvoy></td></tr>
+<tr><td align='left'>o1can&emsp;1C8(&emsp;4ohae&emsp;8an&emsp;3cck9&emsp;4oh9&emsp;s&emsp;3c89&emsp;kc79&emsp;okc79&emsp;kc79&emsp;kayae</td></tr>
+<tr><td rowspan=2>14</td><td rowspan=2>+P0</td><td align='left'><tvoy>4oe&emsp;5cH9&emsp;4ohc79&emsp;4ohc89&emsp;4ohae9&emsp;soy&emsp;1c89&emsp;4oh9&emsp;oe&ensp;2k9&emsp;4oh989</tvoy></td></tr>
+<tr><td align='left'>4oe&emsp;5cH9&emsp;4ohc79&emsp;4ohc89&emsp;4ohae9&emsp;soy&emsp;1c89&emsp;4oh9&emsp;oe&ensp;2k9&emsp;4oh989</td></tr>
+<tr><td rowspan=2>15</td><td rowspan=2>+P0</td><td align='left'><tvoy>sae&emsp;oe&emsp;oean&emsp;oehc9&emsp;oe&emsp;5c8&emsp;4ohae9&emsp;4ohay&emsp;1c89&emsp;4ohan&emsp;k9&emsp;e279&ensp;4o</tvoy></td></tr>
+<tr><td align='left'>sae&emsp;oe&emsp;oean&emsp;oehc9&emsp;oe&emsp;5c8&emsp;4ohae9&emsp;4ohay&emsp;1c89&emsp;4ohan&emsp;k9&emsp;e279&ensp;4o</td></tr>
+<tr><td rowspan=2>16</td><td rowspan=2>+P0</td><td align='left'><tvoy>o81c89&emsp;4oe389&emsp;3oh589&emsp;4ohan&emsp;oy&emsp;3c89&emsp;4oeoe&ensp;hC89&emsp;4ohaeop</tvoy></td></tr>
+<tr><td align='left'>o81c89&emsp;4oe389&emsp;3oh589&emsp;4ohan&emsp;oy&emsp;3c89&emsp;4oeoe&ensp;hC89&emsp;4ohaeop</td></tr>
+<tr><td rowspan=2>17</td><td rowspan=2>+P0</td><td align='left'><tvoy>sae&emsp;2c8&emsp;9han&emsp;4ohan&emsp;2cH9&emsp;e8&emsp;sam&emsp;H9&emsp;e3c89</tvoy></td></tr>
+<tr><td align='left'>sae&emsp;2c8&emsp;9han&emsp;4ohan&emsp;2cH9&emsp;e8&emsp;sam&emsp;H9&emsp;e3c89</td></tr>
+<tr><t  d>&nbsp;</td><td>&nbsp;</td><td><tv>&nbsp;</tv></td></tr>
+<tr><td rowspan=2>18</td><td rowspan=2>@Ln</td><td align='left'><tvoy>oh29</tvoy></td></tr>
+<tr><td align='left'>oh29</td></tr>
+<tr><td rowspan=2>19</td><td rowspan=2>+Ln</td><td align='left'><tvoy>sayae</tvoy></td></tr>
+<tr><td align='left'>sayae</td></tr>
+<tr><td rowspan=2>20</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8ohae</tvoy></td></tr>
+<tr><td align='left'>8ohae</td></tr>
+<tr><td rowspan=2>21</td><td rowspan=2>+Ln</td><td align='left'><tvoy>8ayoe</tvoy></td></tr>
+<tr><td align='left'>8ayoe</td></tr>
+<tr><td rowspan=2>22</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8ae89</tvoy></td></tr>
+<tr><td align='left'>8ae89</td></tr>
+<tr><td rowspan=2>23</td><td rowspan=2>+Ln</td><td align='left'><tvoy>8ae&ensp;28</tvoy></td></tr>
+<tr><td align='left'>8ae&ensp;28</td></tr>
+<tr><td rowspan=2>24</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8aehay</tvoy></td></tr>
+<tr><td align='left'>8aehay</td></tr>
+<tr><td rowspan=2>25</td><td rowspan=2>+Ln</td><td align='left'><tvoy>4ohae</tvoy></td></tr>
+<tr><td align='left'>4ohae</td></tr>
+<tr><td rowspan=2>26</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8e9</tvoy></td></tr>
+<tr><td align='left'>8e9</td></tr>
+<tr><td rowspan=2>27</td><td rowspan=2>+Ln</td><td align='left'><tvoy>oy9</tvoy></td></tr>
+<tr><td align='left'>oy9</td></tr>
+<tr><td rowspan=2>28</td><td rowspan=2>@Ln</td><td align='left'><tvoy>ok9</tvoy></td></tr>
+<tr><td align='left'>ok9</td></tr>
+<tr><td rowspan=2>29</td><td rowspan=2>+Ln</td><td align='left'><tvoy>e19</tvoy></td></tr>
+<tr><td align='left'>e19</td></tr>
+<tr><td rowspan=2>30</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8ay9</tvoy></td></tr>
+<tr><td align='left'>8ay9</td></tr>
+<tr><td rowspan=2>31</td><td rowspan=2>+Ln</td><td align='left'><tvoy>8ae</tvoy></td></tr>
+<tr><td align='left'>8ae</td></tr>
+<tr><td rowspan=2>32</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8ae89</tvoy></td></tr>
+<tr><td align='left'>8ae89</td></tr>
+<tr><td rowspan=2>33</td><td rowspan=2>+Ln</td><td align='left'><tvoy>4okc8</tvoy></td></tr>
+<tr><td align='left'>4okc8</td></tr>
+<tr><td rowspan=2>34</td><td rowspan=2>@Ln</td><td align='left'><tvoy>bhae</tvoy></td></tr>
+<tr><td align='left'>bhae</td></tr>
+<tr><td rowspan=2>35</td><td rowspan=2>+Ln</td><td align='left'><tvoy>9hc79</tvoy></td></tr>
+<tr><td align='left'>9hc79</td></tr>
+<tr><td rowspan=2>36</td><td rowspan=2>@Ln</td><td align='left'><tvoy>oeh19</tvoy></td></tr>
+<tr><td align='left'>oeh19</td></tr>
+<tr><td rowspan=2>37</td><td rowspan=2>+Ln</td><td align='left'><tvoy>okoe9</tvoy></td></tr>
+<tr><td align='left'>okoe9</td></tr>
+<tr><td rowspan=2>38</td><td rowspan=2>@P0</td><td align='left'><tvoy>koe2coy&emsp;4ohae&emsp;8ay&emsp;oehc8&emsp;oyoe&emsp;h1c9&emsp;ohan&emsp;oe1c9&emsp;ohay&emsp;2ch9&emsp;8c89&emsp;hc79</tvoy></td></tr>
+<tr><td align='left'>koe2coy&emsp;4ohae&emsp;8ay&emsp;oehc8&emsp;oyoe&emsp;h1c9&emsp;ohan&emsp;oe1c9&emsp;ohay&emsp;2ch9&emsp;8c89&emsp;hc79</td></tr>
+<tr><td rowspan=2>39</td><td rowspan=2>+P0</td><td align='left'><tvoy>4o&ensp;4ohC9&emsp;oehan&emsp;4oe&emsp;2C89&emsp;4ohcoy&emsp;5cc89&emsp;4ohae&emsp;oy&emsp;1c9&emsp;4ohay&emsp;oe&emsp;am</tvoy></td></tr>
+<tr><td align='left'>4o&ensp;4ohC9&emsp;oehan&emsp;4oe&emsp;2C89&emsp;4ohcoy&emsp;5cc89&emsp;4ohae&emsp;oy&emsp;1c9&emsp;4ohay&emsp;oe&emsp;am</td></tr>
+<tr><td rowspan=2>40</td><td rowspan=2>+P0</td><td align='left'><tvoy>8e2c79&emsp;4ohan&emsp;8ae&emsp;4oe&emsp;4oe&emsp;oe&emsp;2C79&emsp;1cc9&emsp;7Ae&emsp;oe&emsp;2C9&emsp;4ohan&emsp;oeoe</tvoy></td></tr>
+<tr><td align='left'>8e2c79&emsp;4ohan&emsp;8ae&emsp;4oe&emsp;4oe&emsp;oe&emsp;2C79&emsp;1cc9&emsp;7Ae&emsp;oe&emsp;2C9&emsp;4ohan&emsp;oeoe</td></tr>
+<tr><td rowspan=2>41</td><td rowspan=2>+P0</td><td align='left'><tvoy>sAe&emsp;2c79&emsp;4ohan&emsp;3c(&emsp;4on&emsp;oe&emsp;2c(&emsp;oe&emsp;2c(&emsp;4oh9&emsp;4oe&emsp;1cc(&emsp;1e&emsp;Ay&emsp;%coeo</tvoy></td></tr>
+<tr><td align='left'>sAe&emsp;2c79&emsp;4ohan&emsp;3c(&emsp;4on&emsp;oe&emsp;2c(&emsp;oe&emsp;2c(&emsp;4oh9&emsp;4oe&emsp;1cc(&emsp;1e&emsp;Ay&emsp;%coeo</td></tr>
+<tr><td rowspan=2>42</td><td rowspan=2>+P0</td><td align='left'><tvoy>oe&emsp;5cc(&emsp;4oe5c9&emsp;4ohan&emsp;oham&emsp;1ay&ensp;oy</tvoy></td></tr>
+<tr><td align='left'>oe&emsp;5cc(&emsp;4oe5c9&emsp;4ohan&emsp;oham&emsp;1ay&ensp;oy</td></tr>
+<tr><t  d>&nbsp;</td><td>&nbsp;</td><td><tv>&nbsp;</tv></td></tr>
+<tr><td rowspan=2>43</td><td rowspan=2>+P0</td><td align='left'><tvoy>gohan&emsp;ohC89&emsp;Ay&emsp;1cs9&emsp;s&ensp;oe&ensp;5c9&emsp;4ohC(&emsp;4okc89&emsp;oehc89&emsp;1c9&ensp;kae&emsp;89&emsp;4oe</tvoy></td></tr>
+<tr><td align='left'>gohan&emsp;ohC89&emsp;Ay&emsp;1cs9&emsp;s&ensp;oe&ensp;5c9&emsp;4ohC(&emsp;4okc89&emsp;oehc89&emsp;1c9&ensp;kae&emsp;89&emsp;4oe</td></tr>
+<tr><td rowspan=2>44</td><td rowspan=2>+P0</td><td align='left'><tvoy>oe&ensp;2Cs&emsp;Ae&emsp;2cH9&emsp;4ohan&emsp;oe&emsp;1c89&emsp;4oe&emsp;1c89&emsp;4oe&ensp;hC9&emsp;4oe1c79&emsp;1cae9</tvoy></td></tr>
+<tr><td align='left'>oe&ensp;2Cs&emsp;Ae&emsp;2cH9&emsp;4ohan&emsp;oe&emsp;1c89&emsp;4oe&emsp;1c89&emsp;4oe&ensp;hC9&emsp;4oe1c79&emsp;1cae9</td></tr>
+<tr><td rowspan=2>45</td><td rowspan=2>+P0</td><td align='left'><tvoy>9&ensp;2c9&emsp;4ohay&emsp;oe&ensp;1c89&emsp;4oy&emsp;om&emsp;ohcc89&emsp;4ohC8&emsp;4ohC9&emsp;4ohC9&emsp;okc9&emsp;4oh9&emsp;89</tvoy></td></tr>
+<tr><td align='left'>9&ensp;2c9&emsp;4ohay&emsp;oe&ensp;1c89&emsp;4oy&emsp;om&emsp;ohcc89&emsp;4ohC8&emsp;4ohC9&emsp;4ohC9&emsp;okc9&emsp;4oh9&emsp;89</td></tr>
+<tr><td rowspan=2>46</td><td rowspan=2>+P0</td><td align='left'><tvoy>91c9&emsp;4okan&emsp;5cH9&emsp;4ohc89&emsp;4ohc89&emsp;e5cH9&emsp;4ohan&emsp;8ae&emsp;koe&emsp;oe1c69</tvoy></td></tr>
+<tr><td align='left'>91c9&emsp;4okan&emsp;5cH9&emsp;4ohc89&emsp;4ohc89&emsp;e5cH9&emsp;4ohan&emsp;8ae&emsp;koe&emsp;oe1c69</td></tr>
+<tr><td rowspan=2>47</td><td rowspan=2>+P0</td><td align='left'><tvoy>4ohan&emsp;oe2cc9&emsp;4ohan&emsp;8ay&emsp;oe&emsp;2c89&emsp;4ohc89&emsp;4ohC89&emsp;4okay&emsp;oe%c89&emsp;oe89</tvoy></td></tr>
+<tr><td align='left'>4ohan&emsp;oe2cc9&emsp;4ohan&emsp;8ay&emsp;oe&emsp;2c89&emsp;4ohc89&emsp;4ohC89&emsp;4okay&emsp;oe%c89&emsp;oe89</td></tr>
+<tr><td rowspan=2>48</td><td rowspan=2>+P0</td><td align='left'><tvoy>4ohcay&emsp;1c89&emsp;2H9&emsp;8oe&emsp;91cc79&emsp;sano&emsp;oe&emsp;1C89&emsp;4ohax&emsp;okax&emsp;8ae&emsp;8am</tvoy></td></tr>
+<tr><td align='left'>4ohcay&emsp;1c89&emsp;2H9&emsp;8oe&emsp;91cc79&emsp;sano&emsp;oe&emsp;1C89&emsp;4ohax&emsp;okax&emsp;8ae&emsp;8am</td></tr>
+<tr><td rowspan=2>49</td><td rowspan=2>+P0</td><td align='left'><tvoy>joy&emsp;5c9&emsp;ohan&emsp;1c89&emsp;4oe&ensp;2coe&emsp;oe1c79</tvoy></td></tr>
+<tr><td align='left'>joy&emsp;5c9&emsp;ohan&emsp;1c89&emsp;4oe&ensp;2coe&emsp;oe1c79</td></tr>
+<tr><t  d>&nbsp;</td><td>&nbsp;</td><td><tv>&nbsp;</tv></td></tr>
+<tr><td rowspan=2>50</td><td rowspan=2>@Lt</td><td align='left'><tvoy>okae&emsp;ojae</tvoy></td></tr>
+<tr><td align='left'>okae&emsp;ojae</td></tr>
+<tr><td rowspan=2>51</td><td rowspan=2>=Lt</td><td align='right'><tvoy>ohcc9&emsp;eoe</tvoy></td></tr>
+<tr><td align='right'>ohcc9&emsp;eoe</td></tr>
+<tr><td rowspan=2>52</td><td rowspan=2>=Lt</td><td align='right'><tvoy>oeoe</tvoy></td></tr>
+<tr><td align='right'>oeoe</td></tr>
+<tr><td rowspan=2>53</td><td rowspan=2>*Lt</td><td align='left'><tvoy>9kc89</tvoy></td></tr>
+<tr><td align='left'>9kc89</td></tr>
+<tr><td rowspan=2>54</td><td rowspan=2>+Lt</td><td align='left'><tvoy>okc89</tvoy></td></tr>
+<tr><td align='left'>okc89</td></tr>
+<tr><td rowspan=2>55</td><td rowspan=2>+Lt</td><td align='left'><tvoy>okC9</tvoy></td></tr>
+<tr><td align='left'>okC9</td></tr>
+<tr><td rowspan=2>56</td><td rowspan=2>+Lt</td><td align='left'><tvoy>4okc89</tvoy></td></tr>
+<tr><td align='left'>4okc89</td></tr>
+<tr><td rowspan=2>57</td><td rowspan=2>+Pb</td><td align='left'><tvoy>ohc8(&emsp;4ch9&emsp;kc8ay&emsp;oe9</tvoy></td></tr>
+<tr><td align='left'>ohc8(&emsp;4ch9&emsp;kc8ay&emsp;oe9</td></tr>
+<tr><td rowspan=2>58</td><td rowspan=2>+Pb</td><td align='left'><tvoy>soe1c89&emsp;soehc89</tvoy></td></tr>
+<tr><td align='left'>soe1c89&emsp;soehc89</td></tr>
+<tr><td rowspan=2>59</td><td rowspan=2>+Pb</td><td align='left'><tvoy>4ohC89&emsp;4ohoe&emsp;oehoe</tvoy></td></tr>
+<tr><td align='left'>4ohC89&emsp;4ohoe&emsp;oehoe</td></tr>
+<tr><t  d>&nbsp;</td><td>&nbsp;</td><td><tv>&nbsp;</tv></td></tr>
+<tr><td rowspan=2>60</td><td rowspan=2>@P1</td><td align='left'><tvoy>hoehc89&emsp;4ohc89&emsp;4oh9&emsp;ej189&emsp;4ok189&emsp;eoe</tvoy></td></tr>
+<tr><td align='left'>hoehc89&emsp;4ohc89&emsp;4oh9&emsp;ej189&emsp;4ok189&emsp;eoe</td></tr>
+<tr><td rowspan=2>61</td><td rowspan=2>+P1</td><td align='left'><tvoy>oh2c9&emsp;4oehC9&emsp;e189&emsp;s&ensp;om&emsp;oe&emsp;okC89</tvoy></td></tr>
+<tr><td align='left'>oh2c9&emsp;4oehC9&emsp;e189&emsp;s&ensp;om&emsp;oe&emsp;okC89</td></tr>
+<tr><td rowspan=2>62</td><td rowspan=2>+P1</td><td align='left'><tvoy>9hcc19&emsp;4ohC8(&emsp;8am&emsp;oe&emsp;oe5C9&emsp;4oe9</tvoy></td></tr>
+<tr><td align='left'>9hcc19&emsp;4ohC8(&emsp;8am&emsp;oe&emsp;oe5C9&emsp;4oe9</td></tr>
+<tr><td rowspan=2>63</td><td rowspan=2>+P1</td><td align='left'><tvoy>okcc9&emsp;4oe&emsp;1c9&emsp;4ohc9&emsp;oe&ensp;89&emsp;oe9e9</tvoy></td></tr>
+<tr><td align='left'>okcc9&emsp;4oe&emsp;1c9&emsp;4ohc9&emsp;oe&ensp;89&emsp;oe9e9</td></tr>
+<tr><td rowspan=2>64</td><td rowspan=2>+P1</td><td align='left'><tvoy>s&emsp;3c9&emsp;4oe&emsp;89&emsp;4ohay&emsp;2c9&emsp;e79</tvoy></td></tr>
+<tr><td align='left'>s&emsp;3c9&emsp;4oe&emsp;89&emsp;4ohay&emsp;2c9&emsp;e79</td></tr>
+<tr><td rowspan=2>65</td><td rowspan=2>+P1</td><td align='left'><tvoy>4ohae&emsp;8an&emsp;8an&emsp;o&#184;oh9&emsp;8am</tvoy></td></tr>
+<tr><td align='left'>4ohae&emsp;8an&emsp;8an&emsp;o&#184;oh9&emsp;8am</td></tr>
+<tr><td rowspan=2>66</td><td rowspan=2>+P1</td><td align='left'><tvoy>ohAe&emsp;5C89&emsp;4okC89&emsp;4ohcc9&emsp;e9</tvoy></td></tr>
+<tr><td align='left'>ohAe&emsp;5C89&emsp;4okC89&emsp;4ohcc9&emsp;e9</td></tr>
+<tr><td rowspan=2>67</td><td rowspan=2>+P1</td><td align='left'><tvoy>9hcc89&emsp;4ohan&emsp;okan&emsp;2ck9</tvoy></td></tr>
+<tr><td align='left'>9hcc89&emsp;4ohan&emsp;okan&emsp;2ck9</td></tr>
+<tr><td rowspan=2>68</td><td rowspan=2>+P1</td><td align='left'><tvoy>oKc9&emsp;2c89&emsp;okoe&emsp;1Hc9&emsp;e89</tvoy></td></tr>
+<tr><td align='left'>oKc9&emsp;2c89&emsp;okoe&emsp;1Hc9&emsp;e89</td></tr>
+<tr><td rowspan=2>69</td><td rowspan=2>+P1</td><td align='left'><tvoy>ohc2c9&emsp;oehc79&emsp;oehc79&emsp;4oe&emsp;1c9</tvoy></td></tr>
+<tr><td align='left'>ohc2c9&emsp;oehc79&emsp;oehc79&emsp;4oe&emsp;1c9</td></tr>
+<tr><td rowspan=2>70</td><td rowspan=2>+P1</td><td align='left'><tvoy>4ohc9&emsp;oe&ensp;1c89&emsp;okc9&emsp;oyoe</tvoy></td></tr>
+<tr><td align='left'>4ohc9&emsp;oe&ensp;1c89&emsp;okc9&emsp;oyoe</td></tr>
+<tr><t  d>&nbsp;</td><td>&nbsp;</td><td><tv>&nbsp;</tv></td></tr>
+</table></stable>
+-->
+<!--</td>-->
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td >
+                <img id="myresult2"  class="img-zoom-result-b" style="width:1221px;  height:64px;" />
+            </td>
+        </tr>
+    </table>
+</div>
+
+<stable><table width='2200px'>
+<tr><td rowspan=2>1</td><td rowspan=2>@P0</td><td align='left'><tvoy>g1c8ay&emsp;oj1c89&emsp;4ohc89&emsp;oj1c89&emsp;4oj89&emsp;8an&emsp;1ckas&emsp;1r9&emsp;4okap</tvoy></td></tr>
+<tr><td align='left'>g1c8ay&emsp;oj1c89&emsp;4ohc89&emsp;oj1c89&emsp;4oj89&emsp;8an&emsp;1ckas&emsp;1r9&emsp;4okap</td></tr>
+<tr><td rowspan=2>2</td><td rowspan=2>=L0</td><td align='right'><tvoy>s</tvoy></td></tr>
+<tr><td align='right'>s</td></tr>
+<tr><td rowspan=2>3</td><td rowspan=2>*P0</td><td align='left'><tvoy>soy&emsp;5ch9&emsp;4ohan&emsp;ohae&emsp;8ae&emsp;oe&emsp;1c89&emsp;8am&emsp;1H9&emsp;ehay&emsp;1H9&emsp;bop</tvoy></td></tr>
+<tr><td align='left'>soy&emsp;5ch9&emsp;4ohan&emsp;ohae&emsp;8ae&emsp;oe&emsp;1c89&emsp;8am&emsp;1H9&emsp;ehay&emsp;1H9&emsp;bop</td></tr>
+<tr><td rowspan=2>4</td><td rowspan=2>=L0</td><td align='right'><tvoy>e</tvoy></td></tr>
+<tr><td align='right'>e</td></tr>
+<tr><td rowspan=2>5</td><td rowspan=2>*P0</td><td align='left'><tvoy>8e&emsp;3H9&emsp;han&emsp;oe1c9&emsp;4ohan&emsp;8ae9&emsp;y8&emsp;8e&ensp;2c89&emsp;4okcc89&emsp;Kc89&emsp;eoe9</tvoy></td></tr>
+<tr><td align='left'>8e&emsp;3H9&emsp;han&emsp;oe1c9&emsp;4ohan&emsp;8ae9&emsp;y8&emsp;8e&ensp;2c89&emsp;4okcc89&emsp;Kc89&emsp;eoe9</td></tr>
+<tr><td rowspan=2>6</td><td rowspan=2>=L0</td><td align='right'><tvoy>e</tvoy></td></tr>
+<tr><td align='right'>e</td></tr>
+<tr><td rowspan=2>7</td><td rowspan=2>*P0</td><td align='left'><tvoy>4oh189&emsp;4ohae&emsp;7ae&emsp;oe&emsp;1ck9&emsp;e189&emsp;5c8(&emsp;1c8&emsp;okc89&emsp;4okc89&emsp;okay</tvoy></td></tr>
+<tr><td align='left'>4oh189&emsp;4ohae&emsp;7ae&emsp;oe&emsp;1ck9&emsp;e189&emsp;5c8(&emsp;1c8&emsp;okc89&emsp;4okc89&emsp;okay</td></tr>
+<tr><td rowspan=2>8</td><td rowspan=2>~L0</td><td align='left'><tvoy>o</tvoy></td></tr>
+<tr><td align='left'>o</td></tr>
+<tr><td rowspan=2>9</td><td rowspan=2>+L0</td><td align='left'><tvoy>y</tvoy></td></tr>
+<tr><td align='left'>y</td></tr>
+<tr><td rowspan=2>10</td><td rowspan=2>*P0</td><td align='left'><tvoy>4ohc&ensp;c8&emsp;1c89&ensp;h9&emsp;ohc79&emsp;e1c69&emsp;8ay&emsp;o&9&emsp;81c89&emsp;8ay&emsp;oe1o89&emsp;okc79&emsp;4oh(</tvoy></td></tr>
+<tr><td align='left'>4ohc&ensp;c8&emsp;1c89&ensp;h9&emsp;ohc79&emsp;e1c69&emsp;8ay&emsp;o&9&emsp;81c89&emsp;8ay&emsp;oe1o89&emsp;okc79&emsp;4oh(</td></tr>
+<tr><td rowspan=2>11</td><td rowspan=2>=L0</td><td align='right'><tvoy>s</tvoy></td></tr>
+<tr><td align='right'>s</td></tr>
+<tr><td rowspan=2>12</td><td rowspan=2>*P0</td><td align='left'><tvoy>4ohc8&ensp;9&emsp;b2c9&emsp;4oe&emsp;1c(&emsp;oe&emsp;1c9&emsp;hC8&emsp;soe&emsp;hc9&emsp;89&ensp;hc89&emsp;4ohAe&emsp;8ay&emsp;oe9</tvoy></td></tr>
+<tr><td align='left'>4ohc8&ensp;9&emsp;b2c9&emsp;4oe&emsp;1c(&emsp;oe&emsp;1c9&emsp;hC8&emsp;soe&emsp;hc9&emsp;89&ensp;hc89&emsp;4ohAe&emsp;8ay&emsp;oe9</td></tr>
+<tr><td rowspan=2>13</td><td rowspan=2>+P0</td><td align='left'><tvoy>o1can&emsp;1C8(&emsp;4ohae&emsp;8an&emsp;3cck9&emsp;4oh9&emsp;s&emsp;3c89&emsp;kc79&emsp;okc79&emsp;kc79&emsp;kayae</tvoy></td></tr>
+<tr><td align='left'>o1can&emsp;1C8(&emsp;4ohae&emsp;8an&emsp;3cck9&emsp;4oh9&emsp;s&emsp;3c89&emsp;kc79&emsp;okc79&emsp;kc79&emsp;kayae</td></tr>
+<tr><td rowspan=2>14</td><td rowspan=2>+P0</td><td align='left'><tvoy>4oe&emsp;5cH9&emsp;4ohc79&emsp;4ohc89&emsp;4ohae9&emsp;soy&emsp;1c89&emsp;4oh9&emsp;oe&ensp;2k9&emsp;4oh989</tvoy></td></tr>
+<tr><td align='left'>4oe&emsp;5cH9&emsp;4ohc79&emsp;4ohc89&emsp;4ohae9&emsp;soy&emsp;1c89&emsp;4oh9&emsp;oe&ensp;2k9&emsp;4oh989</td></tr>
+<tr><td rowspan=2>15</td><td rowspan=2>+P0</td><td align='left'><tvoy>sae&emsp;oe&emsp;oean&emsp;oehc9&emsp;oe&emsp;5c8&emsp;4ohae9&emsp;4ohay&emsp;1c89&emsp;4ohan&emsp;k9&emsp;e279&ensp;4o</tvoy></td></tr>
+<tr><td align='left'>sae&emsp;oe&emsp;oean&emsp;oehc9&emsp;oe&emsp;5c8&emsp;4ohae9&emsp;4ohay&emsp;1c89&emsp;4ohan&emsp;k9&emsp;e279&ensp;4o</td></tr>
+<tr><td rowspan=2>16</td><td rowspan=2>+P0</td><td align='left'><tvoy>o81c89&emsp;4oe389&emsp;3oh589&emsp;4ohan&emsp;oy&emsp;3c89&emsp;4oeoe&ensp;hC89&emsp;4ohaeop</tvoy></td></tr>
+<tr><td align='left'>o81c89&emsp;4oe389&emsp;3oh589&emsp;4ohan&emsp;oy&emsp;3c89&emsp;4oeoe&ensp;hC89&emsp;4ohaeop</td></tr>
+<tr><td rowspan=2>17</td><td rowspan=2>+P0</td><td align='left'><tvoy>sae&emsp;2c8&emsp;9han&emsp;4ohan&emsp;2cH9&emsp;e8&emsp;sam&emsp;H9&emsp;e3c89</tvoy></td></tr>
+<tr><td align='left'>sae&emsp;2c8&emsp;9han&emsp;4ohan&emsp;2cH9&emsp;e8&emsp;sam&emsp;H9&emsp;e3c89</td></tr>
+<tr><t  d>&nbsp;</td><td>&nbsp;</td><td><tv>&nbsp;</tv></td></tr>
+<tr><td rowspan=2>18</td><td rowspan=2>@Ln</td><td align='left'><tvoy>oh29</tvoy></td></tr>
+<tr><td align='left'>oh29</td></tr>
+<tr><td rowspan=2>19</td><td rowspan=2>+Ln</td><td align='left'><tvoy>sayae</tvoy></td></tr>
+<tr><td align='left'>sayae</td></tr>
+<tr><td rowspan=2>20</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8ohae</tvoy></td></tr>
+<tr><td align='left'>8ohae</td></tr>
+<tr><td rowspan=2>21</td><td rowspan=2>+Ln</td><td align='left'><tvoy>8ayoe</tvoy></td></tr>
+<tr><td align='left'>8ayoe</td></tr>
+<tr><td rowspan=2>22</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8ae89</tvoy></td></tr>
+<tr><td align='left'>8ae89</td></tr>
+<tr><td rowspan=2>23</td><td rowspan=2>+Ln</td><td align='left'><tvoy>8ae&ensp;28</tvoy></td></tr>
+<tr><td align='left'>8ae&ensp;28</td></tr>
+<tr><td rowspan=2>24</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8aehay</tvoy></td></tr>
+<tr><td align='left'>8aehay</td></tr>
+<tr><td rowspan=2>25</td><td rowspan=2>+Ln</td><td align='left'><tvoy>4ohae</tvoy></td></tr>
+<tr><td align='left'>4ohae</td></tr>
+<tr><td rowspan=2>26</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8e9</tvoy></td></tr>
+<tr><td align='left'>8e9</td></tr>
+<tr><td rowspan=2>27</td><td rowspan=2>+Ln</td><td align='left'><tvoy>oy9</tvoy></td></tr>
+<tr><td align='left'>oy9</td></tr>
+<tr><td rowspan=2>28</td><td rowspan=2>@Ln</td><td align='left'><tvoy>ok9</tvoy></td></tr>
+<tr><td align='left'>ok9</td></tr>
+<tr><td rowspan=2>29</td><td rowspan=2>+Ln</td><td align='left'><tvoy>e19</tvoy></td></tr>
+<tr><td align='left'>e19</td></tr>
+<tr><td rowspan=2>30</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8ay9</tvoy></td></tr>
+<tr><td align='left'>8ay9</td></tr>
+<tr><td rowspan=2>31</td><td rowspan=2>+Ln</td><td align='left'><tvoy>8ae</tvoy></td></tr>
+<tr><td align='left'>8ae</td></tr>
+<tr><td rowspan=2>32</td><td rowspan=2>@Ln</td><td align='left'><tvoy>8ae89</tvoy></td></tr>
+<tr><td align='left'>8ae89</td></tr>
+<tr><td rowspan=2>33</td><td rowspan=2>+Ln</td><td align='left'><tvoy>4okc8</tvoy></td></tr>
+<tr><td align='left'>4okc8</td></tr>
+<tr><td rowspan=2>34</td><td rowspan=2>@Ln</td><td align='left'><tvoy>bhae</tvoy></td></tr>
+<tr><td align='left'>bhae</td></tr>
+<tr><td rowspan=2>35</td><td rowspan=2>+Ln</td><td align='left'><tvoy>9hc79</tvoy></td></tr>
+<tr><td align='left'>9hc79</td></tr>
+<tr><td rowspan=2>36</td><td rowspan=2>@Ln</td><td align='left'><tvoy>oeh19</tvoy></td></tr>
+<tr><td align='left'>oeh19</td></tr>
+<tr><td rowspan=2>37</td><td rowspan=2>+Ln</td><td align='left'><tvoy>okoe9</tvoy></td></tr>
+<tr><td align='left'>okoe9</td></tr>
+<tr><td rowspan=2>38</td><td rowspan=2>@P0</td><td align='left'><tvoy>koe2coy&emsp;4ohae&emsp;8ay&emsp;oehc8&emsp;oyoe&emsp;h1c9&emsp;ohan&emsp;oe1c9&emsp;ohay&emsp;2ch9&emsp;8c89&emsp;hc79</tvoy></td></tr>
+<tr><td align='left'>koe2coy&emsp;4ohae&emsp;8ay&emsp;oehc8&emsp;oyoe&emsp;h1c9&emsp;ohan&emsp;oe1c9&emsp;ohay&emsp;2ch9&emsp;8c89&emsp;hc79</td></tr>
+<tr><td rowspan=2>39</td><td rowspan=2>+P0</td><td align='left'><tvoy>4o&ensp;4ohC9&emsp;oehan&emsp;4oe&emsp;2C89&emsp;4ohcoy&emsp;5cc89&emsp;4ohae&emsp;oy&emsp;1c9&emsp;4ohay&emsp;oe&emsp;am</tvoy></td></tr>
+<tr><td align='left'>4o&ensp;4ohC9&emsp;oehan&emsp;4oe&emsp;2C89&emsp;4ohcoy&emsp;5cc89&emsp;4ohae&emsp;oy&emsp;1c9&emsp;4ohay&emsp;oe&emsp;am</td></tr>
+<tr><td rowspan=2>40</td><td rowspan=2>+P0</td><td align='left'><tvoy>8e2c79&emsp;4ohan&emsp;8ae&emsp;4oe&emsp;4oe&emsp;oe&emsp;2C79&emsp;1cc9&emsp;7Ae&emsp;oe&emsp;2C9&emsp;4ohan&emsp;oeoe</tvoy></td></tr>
+<tr><td align='left'>8e2c79&emsp;4ohan&emsp;8ae&emsp;4oe&emsp;4oe&emsp;oe&emsp;2C79&emsp;1cc9&emsp;7Ae&emsp;oe&emsp;2C9&emsp;4ohan&emsp;oeoe</td></tr>
+<tr><td rowspan=2>41</td><td rowspan=2>+P0</td><td align='left'><tvoy>sAe&emsp;2c79&emsp;4ohan&emsp;3c(&emsp;4on&emsp;oe&emsp;2c(&emsp;oe&emsp;2c(&emsp;4oh9&emsp;4oe&emsp;1cc(&emsp;1e&emsp;Ay&emsp;%coeo</tvoy></td></tr>
+<tr><td align='left'>sAe&emsp;2c79&emsp;4ohan&emsp;3c(&emsp;4on&emsp;oe&emsp;2c(&emsp;oe&emsp;2c(&emsp;4oh9&emsp;4oe&emsp;1cc(&emsp;1e&emsp;Ay&emsp;%coeo</td></tr>
+<tr><td rowspan=2>42</td><td rowspan=2>+P0</td><td align='left'><tvoy>oe&emsp;5cc(&emsp;4oe5c9&emsp;4ohan&emsp;oham&emsp;1ay&ensp;oy</tvoy></td></tr>
+<tr><td align='left'>oe&emsp;5cc(&emsp;4oe5c9&emsp;4ohan&emsp;oham&emsp;1ay&ensp;oy</td></tr>
+<tr><t  d>&nbsp;</td><td>&nbsp;</td><td><tv>&nbsp;</tv></td></tr>
+<tr><td rowspan=2>43</td><td rowspan=2>+P0</td><td align='left'><tvoy>gohan&emsp;ohC89&emsp;Ay&emsp;1cs9&emsp;s&ensp;oe&ensp;5c9&emsp;4ohC(&emsp;4okc89&emsp;oehc89&emsp;1c9&ensp;kae&emsp;89&emsp;4oe</tvoy></td></tr>
+<tr><td align='left'>gohan&emsp;ohC89&emsp;Ay&emsp;1cs9&emsp;s&ensp;oe&ensp;5c9&emsp;4ohC(&emsp;4okc89&emsp;oehc89&emsp;1c9&ensp;kae&emsp;89&emsp;4oe</td></tr>
+<tr><td rowspan=2>44</td><td rowspan=2>+P0</td><td align='left'><tvoy>oe&ensp;2Cs&emsp;Ae&emsp;2cH9&emsp;4ohan&emsp;oe&emsp;1c89&emsp;4oe&emsp;1c89&emsp;4oe&ensp;hC9&emsp;4oe1c79&emsp;1cae9</tvoy></td></tr>
+<tr><td align='left'>oe&ensp;2Cs&emsp;Ae&emsp;2cH9&emsp;4ohan&emsp;oe&emsp;1c89&emsp;4oe&emsp;1c89&emsp;4oe&ensp;hC9&emsp;4oe1c79&emsp;1cae9</td></tr>
+<tr><td rowspan=2>45</td><td rowspan=2>+P0</td><td align='left'><tvoy>9&ensp;2c9&emsp;4ohay&emsp;oe&ensp;1c89&emsp;4oy&emsp;om&emsp;ohcc89&emsp;4ohC8&emsp;4ohC9&emsp;4ohC9&emsp;okc9&emsp;4oh9&emsp;89</tvoy></td></tr>
+<tr><td align='left'>9&ensp;2c9&emsp;4ohay&emsp;oe&ensp;1c89&emsp;4oy&emsp;om&emsp;ohcc89&emsp;4ohC8&emsp;4ohC9&emsp;4ohC9&emsp;okc9&emsp;4oh9&emsp;89</td></tr>
+<tr><td rowspan=2>46</td><td rowspan=2>+P0</td><td align='left'><tvoy>91c9&emsp;4okan&emsp;5cH9&emsp;4ohc89&emsp;4ohc89&emsp;e5cH9&emsp;4ohan&emsp;8ae&emsp;koe&emsp;oe1c69</tvoy></td></tr>
+<tr><td align='left'>91c9&emsp;4okan&emsp;5cH9&emsp;4ohc89&emsp;4ohc89&emsp;e5cH9&emsp;4ohan&emsp;8ae&emsp;koe&emsp;oe1c69</td></tr>
+<tr><td rowspan=2>47</td><td rowspan=2>+P0</td><td align='left'><tvoy>4ohan&emsp;oe2cc9&emsp;4ohan&emsp;8ay&emsp;oe&emsp;2c89&emsp;4ohc89&emsp;4ohC89&emsp;4okay&emsp;oe%c89&emsp;oe89</tvoy></td></tr>
+<tr><td align='left'>4ohan&emsp;oe2cc9&emsp;4ohan&emsp;8ay&emsp;oe&emsp;2c89&emsp;4ohc89&emsp;4ohC89&emsp;4okay&emsp;oe%c89&emsp;oe89</td></tr>
+<tr><td rowspan=2>48</td><td rowspan=2>+P0</td><td align='left'><tvoy>4ohcay&emsp;1c89&emsp;2H9&emsp;8oe&emsp;91cc79&emsp;sano&emsp;oe&emsp;1C89&emsp;4ohax&emsp;okax&emsp;8ae&emsp;8am</tvoy></td></tr>
+<tr><td align='left'>4ohcay&emsp;1c89&emsp;2H9&emsp;8oe&emsp;91cc79&emsp;sano&emsp;oe&emsp;1C89&emsp;4ohax&emsp;okax&emsp;8ae&emsp;8am</td></tr>
+<tr><td rowspan=2>49</td><td rowspan=2>+P0</td><td align='left'><tvoy>joy&emsp;5c9&emsp;ohan&emsp;1c89&emsp;4oe&ensp;2coe&emsp;oe1c79</tvoy></td></tr>
+<tr><td align='left'>joy&emsp;5c9&emsp;ohan&emsp;1c89&emsp;4oe&ensp;2coe&emsp;oe1c79</td></tr>
+<tr><t  d>&nbsp;</td><td>&nbsp;</td><td><tv>&nbsp;</tv></td></tr>
+<tr><td rowspan=2>50</td><td rowspan=2>@Lt</td><td align='left'><tvoy>okae&emsp;ojae</tvoy></td></tr>
+<tr><td align='left'>okae&emsp;ojae</td></tr>
+<tr><td rowspan=2>51</td><td rowspan=2>=Lt</td><td align='right'><tvoy>ohcc9&emsp;eoe</tvoy></td></tr>
+<tr><td align='right'>ohcc9&emsp;eoe</td></tr>
+<tr><td rowspan=2>52</td><td rowspan=2>=Lt</td><td align='right'><tvoy>oeoe</tvoy></td></tr>
+<tr><td align='right'>oeoe</td></tr>
+<tr><td rowspan=2>53</td><td rowspan=2>*Lt</td><td align='left'><tvoy>9kc89</tvoy></td></tr>
+<tr><td align='left'>9kc89</td></tr>
+<tr><td rowspan=2>54</td><td rowspan=2>+Lt</td><td align='left'><tvoy>okc89</tvoy></td></tr>
+<tr><td align='left'>okc89</td></tr>
+<tr><td rowspan=2>55</td><td rowspan=2>+Lt</td><td align='left'><tvoy>okC9</tvoy></td></tr>
+<tr><td align='left'>okC9</td></tr>
+<tr><td rowspan=2>56</td><td rowspan=2>+Lt</td><td align='left'><tvoy>4okc89</tvoy></td></tr>
+<tr><td align='left'>4okc89</td></tr>
+<tr><td rowspan=2>57</td><td rowspan=2>+Pb</td><td align='left'><tvoy>ohc8(&emsp;4ch9&emsp;kc8ay&emsp;oe9</tvoy></td></tr>
+<tr><td align='left'>ohc8(&emsp;4ch9&emsp;kc8ay&emsp;oe9</td></tr>
+<tr><td rowspan=2>58</td><td rowspan=2>+Pb</td><td align='left'><tvoy>soe1c89&emsp;soehc89</tvoy></td></tr>
+<tr><td align='left'>soe1c89&emsp;soehc89</td></tr>
+<tr><td rowspan=2>59</td><td rowspan=2>+Pb</td><td align='left'><tvoy>4ohC89&emsp;4ohoe&emsp;oehoe</tvoy></td></tr>
+<tr><td align='left'>4ohC89&emsp;4ohoe&emsp;oehoe</td></tr>
+<tr><t  d>&nbsp;</td><td>&nbsp;</td><td><tv>&nbsp;</tv></td></tr>
+<tr><td rowspan=2>60</td><td rowspan=2>@P1</td><td align='left'><tvoy>hoehc89&emsp;4ohc89&emsp;4oh9&emsp;ej189&emsp;4ok189&emsp;eoe</tvoy></td></tr>
+<tr><td align='left'>hoehc89&emsp;4ohc89&emsp;4oh9&emsp;ej189&emsp;4ok189&emsp;eoe</td></tr>
+<tr><td rowspan=2>61</td><td rowspan=2>+P1</td><td align='left'><tvoy>oh2c9&emsp;4oehC9&emsp;e189&emsp;s&ensp;om&emsp;oe&emsp;okC89</tvoy></td></tr>
+<tr><td align='left'>oh2c9&emsp;4oehC9&emsp;e189&emsp;s&ensp;om&emsp;oe&emsp;okC89</td></tr>
+<tr><td rowspan=2>62</td><td rowspan=2>+P1</td><td align='left'><tvoy>9hcc19&emsp;4ohC8(&emsp;8am&emsp;oe&emsp;oe5C9&emsp;4oe9</tvoy></td></tr>
+<tr><td align='left'>9hcc19&emsp;4ohC8(&emsp;8am&emsp;oe&emsp;oe5C9&emsp;4oe9</td></tr>
+<tr><td rowspan=2>63</td><td rowspan=2>+P1</td><td align='left'><tvoy>okcc9&emsp;4oe&emsp;1c9&emsp;4ohc9&emsp;oe&ensp;89&emsp;oe9e9</tvoy></td></tr>
+<tr><td align='left'>okcc9&emsp;4oe&emsp;1c9&emsp;4ohc9&emsp;oe&ensp;89&emsp;oe9e9</td></tr>
+<tr><td rowspan=2>64</td><td rowspan=2>+P1</td><td align='left'><tvoy>s&emsp;3c9&emsp;4oe&emsp;89&emsp;4ohay&emsp;2c9&emsp;e79</tvoy></td></tr>
+<tr><td align='left'>s&emsp;3c9&emsp;4oe&emsp;89&emsp;4ohay&emsp;2c9&emsp;e79</td></tr>
+<tr><td rowspan=2>65</td><td rowspan=2>+P1</td><td align='left'><tvoy>4ohae&emsp;8an&emsp;8an&emsp;o&#184;oh9&emsp;8am</tvoy></td></tr>
+<tr><td align='left'>4ohae&emsp;8an&emsp;8an&emsp;o&#184;oh9&emsp;8am</td></tr>
+<tr><td rowspan=2>66</td><td rowspan=2>+P1</td><td align='left'><tvoy>ohAe&emsp;5C89&emsp;4okC89&emsp;4ohcc9&emsp;e9</tvoy></td></tr>
+<tr><td align='left'>ohAe&emsp;5C89&emsp;4okC89&emsp;4ohcc9&emsp;e9</td></tr>
+<tr><td rowspan=2>67</td><td rowspan=2>+P1</td><td align='left'><tvoy>9hcc89&emsp;4ohan&emsp;okan&emsp;2ck9</tvoy></td></tr>
+<tr><td align='left'>9hcc89&emsp;4ohan&emsp;okan&emsp;2ck9</td></tr>
+<tr><td rowspan=2>68</td><td rowspan=2>+P1</td><td align='left'><tvoy>oKc9&emsp;2c89&emsp;okoe&emsp;1Hc9&emsp;e89</tvoy></td></tr>
+<tr><td align='left'>oKc9&emsp;2c89&emsp;okoe&emsp;1Hc9&emsp;e89</td></tr>
+<tr><td rowspan=2>69</td><td rowspan=2>+P1</td><td align='left'><tvoy>ohc2c9&emsp;oehc79&emsp;oehc79&emsp;4oe&emsp;1c9</tvoy></td></tr>
+<tr><td align='left'>ohc2c9&emsp;oehc79&emsp;oehc79&emsp;4oe&emsp;1c9</td></tr>
+<tr><td rowspan=2>70</td><td rowspan=2>+P1</td><td align='left'><tvoy>4ohc9&emsp;oe&ensp;1c89&emsp;okc9&emsp;oyoe</tvoy></td></tr>
+<tr><td align='left'>4ohc9&emsp;oe&ensp;1c89&emsp;okc9&emsp;oyoe</td></tr>
+<tr><t  d>&nbsp;</td><td>&nbsp;</td><td><tv>&nbsp;</tv></td></tr>
+</table></stable>
+
+
+<script>
+// Initiate zoom effect:
+<!--setup();-->
+imageZoom("myimage1", "myresult1", "myresult2", "myresult3");
+
+/* Initiate Magnify Function
+with the id of the image, and the strength of the magnifier glass:*/
+<!--magnify("myimage1", 6);-->
+
+
+
+</script>
+
+</body>
+</html>
