@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='vms_inspector.css'>
+    <link rel='stylesheet' href='./css/jquery.ui.theme.css' type='text/css' />
+    <link rel='stylesheet' href='./css/jquery.ui.accordion.css' type='text/css' />
+    <link rel='stylesheet' href='./css/jquery.Jcrop.css' type='text/css' />
+    <link rel='stylesheet' href='./css/jcrop_main.css' type='text/css' />
+    <script src='./js/jquery.min.js'></script>
+    <script src='./js/jquery.ui.widget.js'></script>
+    <script src='./js/jquery.jcrop.min.js'></script>
+    <script src='vms_inspector.js'></script>
+    <!--<script src='./js/jcrop_main.js'></script>-->
+</head>
+<body class='main'>
+    <table class='banner-table' width='100%' >
+        <tr>
+            <td style=' padding-left:100px;'>
+                <H2>Steckley & Associates</H2>
+            </td>
+        </tr>
+    </table>
+    <center>
+        <h1>Voynich Manuscript Inspector</h1>
+		<img align='center' width='200px' src='Underline-Stroke.png'>
+        <h1>Folio: f2r</h1>
+
+        <table class='nav-table' width='1182px' >
+            <tr  align='justify' width='100%'>
+                <td align='left' style='border: 0px;'>
+                    <a style='vertical-align: middle;' href='f1v.html' ><img id="previous" src='./left_icon.png'  width='50px' onmouseover="prevHoverImg()" onmouseout="prevImg()"></a></td>
+                <td align='center' width='100%' style='border: 0px;'>
+                    <a style='vertical-align: middle;' href='index.html#f2r' ><img id="toc" src='./toc_icon.png' width='50px' onmouseover="tocHoverImg()" onmouseout="tocImg()" ></a></td>
+                <td align='right' style='border: 0px;'>
+                    <a style='vertical-align: middle;'  href='f2v.html'><img id="next" src='./right_icon.png'  width='50px' onmouseover="nextHoverImg()" onmouseout="nextImg()"></a></td>
+            </tr>
+        </table>
+
+        <div class='velum-inspection-container img-magnifier-container'>
+            <table class='mag-inpection-table' >
+                <tr>
+                    <td >
+                        <img id='mag_img_2'  class='img-velum' style='width:1156px;  height:81px; vertical-align:bottom' />
+                    </td>
+                </tr>
+            </table>
+            <table class='mag-inpection-table' >
+                <tr>
+                    <td >
+                        <div id='mag_img_1'  class='img-velum' style='width:578px;  height:810px; vertical-align:top'></div>
+                    </td >
+                    <td >
+                        <img id='src_img' class='img-velum' src='hires/005.jpg' style='width:578px; height:810px; vertical-align:top' >
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <table class='codex-inspection-table'  style='width:1156px;'>
+            <tr>
+                <td width='85%'>
+	<div style='height:300px; overflow-y: scroll;'>
+		<table class='translit-table' width='100%'>
+			<tr >
+				<td >1</td>
+				<td >@P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy><%>h98an9.9g1oe.8am.ok1ae.9j1am.Hoes9</tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy><%>kydainy.ypchol.daiin.otchal<->ypchaiin.ckholsy</tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy><%>DG8ANG.GPTOE.8AM.OHTAE.GPTAM.DZOE2G</tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >2</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>8oy1oy9.1hay.s.2oy.K9.@253;</tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy>dorchory<->chkar.s<->shor.cthy.{cto}</tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>8ORTORG.TDAR.2.SOR.HZG.HZO</tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >3</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>4okam.Kc9.9.1oy.19.989.1am</tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy>qotaiin<->cthey.y<->chor.chy.ydy<->chaiin</tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>4OHAM.HZCG.G.TOR.TG.G8G.TAM</tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >4</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>@227;aI89.1ko8,89.G9.8aes.1,okam.8</tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy>{c'o}aiidy<->chtod,dy<->cphy.dals<->chokaiin.d</tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>SAII8G.THO88G.PZG.8AE2.TODAM.8</tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >5</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>oko1oy.ae.2o8am.1oe.8aN.9k1am.8aN</tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy>otochor.al<->shodaiin<->chol,dan<->ytchaiin.dan</tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>OHOTOR.AE.SO8AM.TOE.8AL.GHTAM.8AL</tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >6</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>sam.8an8.8hoe.soy.9koe89.81oe.819.K9</tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy>saiin.dain,d<->dkol.sor<->ytoldy<->dchol.dchy.cthy</tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>2AM.8AN8.8DOE.2OR.GHOE8G.8TOE.8TG.HZG</tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >7</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>2oy.H9.8am9.1oe.8aN<$></tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy>shor.ckhy.daiiny<->chol,dan<$></tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>SOR.DZG.8AMG.TOE.8AL<$></tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >8</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy><%>h98an.2am.4o9.s.2oe.fo8aN.9h2.oe,2C9.8aIe89</tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy><%>kydain.shaiin.qoy.s.shol.fodan<->yksh.olsheey.daiildy</tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy><%>DG8AN.SAM.4OG.2.SOE.FO8AL.GDS.OESCCG.8AIIE8G</tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >9</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>8es,2o.hoe.2C9.4ohc9.9ho89.so.1oe,9h9.8an.8aZoe</tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy>dls,sho.kol.sheey.qokey.ykody.so<->chol,yky.dain.daiisol</tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>8E2SO.DOE.SCCG.4ODCG.GDO8G.2O.TOE.GDG.8AN.8AIIROE</tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >10</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>@186;h9.1oeam.2oe.2ch9.8am.Kc9.hcoe.s,am.@208;@183;</tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy>qo'ky.cholaiin.shol.sheky.daiin<->cthey.keol.saiin.e'a'iin</tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>4ODG.TOEAM.SOE.SCDG.8AM.HZCG.DCOE.2.AM.2AM</tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >11</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>91an.8ae.19.8aeoy.2aN.8aN.oes,am.2C9.Hoy</tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy>ychain.dal.chy.dalor.shan.dan<->olsaiin.sheey.ckhor</tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>GTAN.8AE.TG.8AEOR.SAL.8AL.OE2AM.SCCG.DZOR</tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >12</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>ohoe.19.1oy.Koy.9oy.aN.1aN.s,am.1ck9.19h9.sae</tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy>okol.chy.chor.cthor.yor.an.chan<->saiin.chety.chyky.sal</tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>ODOE.TG.TOR.HZOR.GOR.AL.TAL.2AM.TCHG.TGDG.2AE</tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr >
+				<td >13</td>
+				<td >+P0</td>
+				<td>
+					<table style='border:0px;'>
+						<tr class='src_GC_N_v101_2a' style='border:0px;'>
+							<td width='200px' >GC_N_v101_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>2o.9hC9.1c9.8am.1K9<$></tvoy>
+							</td>
+						</tr>
+						<tr class='src_ZL_N_ext_Eva_3a' style='border:0px;'>
+							<td width='200px' >ZL_N_ext_Eva_3a</td>
+							<td width='100%' align='left'>
+								<tvoy>sho.ykeey.chey.daiin.chcthy<$></tvoy>
+							</td>
+						</tr>
+						<tr class='src_FG_N_FSG_2a' style='border:0px;'>
+							<td width='200px' >FG_N_FSG_2a</td>
+							<td width='100%' align='left'>
+								<tvoy>SO.GDCCG.TCG.8AM.THZG<$></tvoy>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+                </td>
+                <td width='15%' style='padding-left:20px;padding-top:20px; align:left; vertical-align:top;'>
+	<span>GC_N_v101_2a</span><input id='GC_N_v101_2a' type='checkbox' onclick='ToggleDisplayHideRows(this);' value='check1' checked='true'/><br>
+	<span>ZL_N_ext_Eva_3a</span><input id='ZL_N_ext_Eva_3a' type='checkbox' onclick='ToggleDisplayHideRows(this);' value='check1' checked='true'/><br>
+	<span>FG_N_FSG_2a</span><input id='FG_N_FSG_2a' type='checkbox' onclick='ToggleDisplayHideRows(this);' value='check1' checked='true'/><br>
+
+                </td>
+            </tr>
+        </table>
+    </center>
+    <script>
+    // Initiate zoom effect:
+    imageZoom('src_img', 'mag_img_1', 'mag_img_2');
+    </script>
+</body>
+</html>
